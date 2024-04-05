@@ -9,6 +9,27 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
-    
+    The Library
+    <button id="addBook">Add Book</button>
+    <dialog>
+        <form id="bookForm">
+            Title: <input type="text" id="title">
+            Author: <input type="text" id="author">
+            Pages: <input type="number" id="pages">
+            Read: <input type="radio" id="yes" name="read" value="yes" />
+            <label for="yes">Yes</label> <input type="radio" id="no" name="read" value="no" />
+            <label for="no">No</label>
+            <input id ="send" type="submit" value="Submit">
+            <button id="close">Close</button>
+        </form>
+    </dialog>
+    <div id="books">
+        <div class="book">
+            Title
+            Author
+            Pages
+            Read
+        </div>
+    </div>
 </body>
 </html>
