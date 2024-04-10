@@ -14,10 +14,10 @@ function addBookToLibrary() {
   
     let div=document.createElement('div');
     div.className="book";
-    div.innerHTML=` ${myLibrary[i].title}
-                    ${myLibrary[i].author}
-                    ${myLibrary[i].pages}`;
-    if(myLibrary[i].read){div.innerHTML+=` Read`}else{div.innerHTML+=` Not Read`}
+    div.innerHTML=` <p>${myLibrary[i].title}</p>
+                    <p>${myLibrary[i].author}</p>
+                    <p>${myLibrary[i].pages}</p>`;
+    if(myLibrary[i].read){div.innerHTML+=` <p>Read</p>`}else{div.innerHTML+=` <p>Not Read</p>`}
     container.appendChild(div);
   
 

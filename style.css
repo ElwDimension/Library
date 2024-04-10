@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0; 
+  font-family: Montserrat;
+}
+
+html,body{
+  height:100%;
+  width:99%;
+}
+
+body{
+  display:grid;
+  grid-template-rows: 15% 1fr; 
+  margin:20px;
+  margin-right:20px;
+}
+
+#header{
+  display:grid;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+#header button{
+  align-self:start;
+}
+
+#books{
+  grid-row-start:2;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows:auto;
+  gap:25px;
+ 
+}
+
+.book{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4,1fr);
+  background-color:lightgray;
+  justify-items: center;
+  align-items:center;
+}
