@@ -28,7 +28,7 @@ const addButton = document.querySelector('#addBook');
 const closeButton=document.querySelector('#close');
 
 addButton.addEventListener('click',()=>{dialog.showModal();});
-closeButton.addEventListener('click', ()=>{dialog.close();})
+closeButton.addEventListener('click', ()=>{clearForm(); dialog.close();})
 
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();

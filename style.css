@@ -13,7 +13,8 @@ body{
   display:grid;
   grid-template-rows: 15% 1fr; 
   margin:20px;
-  margin-right:20px;
+  font-size: 130%
+  
 }
 
 #header{
@@ -31,7 +32,7 @@ body{
   grid-row-start:2;
   display:grid;
   grid-template-columns: repeat(4,1fr);
-  grid-template-rows:auto;
+  margin-left:25px;
   gap:25px;
  
 }
@@ -43,4 +44,6 @@ body{
   background-color:lightgray;
   justify-items: center;
   align-items:center;
+  height:400px;
+  width:450px;
 }
