@@ -49,6 +49,8 @@ function clearForm(){
   document.getElementById('title').value='';
   document.getElementById('author').value='';
   document.getElementById('pages').value='';
+  document.getElementById("yes").checked = false;
+  document.getElementById("no").checked = false;
 }
 
 /*var form = document.querySelector("form");
