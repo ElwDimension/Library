@@ -17,9 +17,22 @@ function addBookToLibrary() {
     div.innerHTML=` <p>${myLibrary[i].title}</p>
                     <p>${myLibrary[i].author}</p>
                     <p>${myLibrary[i].pages}</p>`;
-    if(myLibrary[i].read){div.innerHTML+=` <p>Read</p>`}else{div.innerHTML+=` <p>Not Read</p>`}
+    if(myLibrary[i].read){div.innerHTML+=` <div><input type="checkbox" id="${i}" checked><span id="label${i}"> Read</span></div>`}
+    else{div.innerHTML+=` <div><input type="checkbox" id ="${i}"><span id="label${i}"> Not Read</span></div>`}
     container.appendChild(div);
-  
+
+    let box=document.querySelector(`input[id="${i}"]`);
+    
+    box.addEventListener('change',function(){
+      console.log(this.id);
+      let boxLabel=document.getElementById("label"+this.id);
+      if(this.checked){console.log(" Read");
+                        boxLabel.innerHTML="Read";
+                        }
+      else{console.log(" Not Read");
+                        boxLabel.innerHTML=" Not Read";}
+    });
+    
 
 }
 
@@ -53,18 +66,15 @@ function clearForm(){
   document.getElementById("no").checked = false;
 }
 
-/*var form = document.querySelector("form");
-    form.onsubmit = function(){
-    	form.preventDefault();
-    	let newtitle = document.getElementById('title').value;
-    	/* newauthor =  document.getElementById("author").value;
-    	newpages =  document.getElementById("pages").value;
-    	newread = document.querySelector("input[name='read']:checked").value;
-
-    	newBook = new Book(newtitle,newauthor,newpages,newread);
-    	myLibrary.push(newBook); 
-      addBookToLibrary(); 
-      alert `newtitle`;
-    }*/
+let testbox=document.querySelector(`input[id="test1"]`);
+    
+    testbox.addEventListener('change',function(){
+      let testboxLabel=document.getElementById("labeltest1");
+      if(this.checked){console.log(" Read");
+                        testboxLabel.innerHTML="Read";
+                        }
+      else{console.log(" Not Read");
+                        testboxLabel.innerHTML=" Not Read";}
+    });
 
 
