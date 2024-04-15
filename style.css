@@ -40,7 +40,7 @@ body{
 .book{
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4,1fr);
+  grid-template-rows: 20px repeat(4,1fr);
   background-color:lightgray;
   justify-items: center;
   align-items:center;
@@ -56,9 +56,15 @@ body{
   white-space: nowrap;
   overflow: hidden;
   text-overflow:ellipsis; 
+  
 }
 
-
+.book button{
+  grid-row-start: 1;
+  justify-self:end;
+  align-self:start;
+  width:20px;
+}
 
 
 

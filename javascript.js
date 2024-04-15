@@ -14,7 +14,8 @@ function addBookToLibrary() {
   
     let div=document.createElement('div');
     div.className="book";
-    div.innerHTML=` <p>${myLibrary[i].title}</p>
+    div.innerHTML=` <button id="remove${i}">X</button>
+                    <p>${myLibrary[i].title}</p>
                     <p>${myLibrary[i].author}</p>
                     <p>${myLibrary[i].pages}</p>`;
     if(myLibrary[i].read){div.innerHTML+=` <div><input type="checkbox" id="${i}" checked><span id="label${i}"> Read</span></div>`}
@@ -22,17 +23,21 @@ function addBookToLibrary() {
     container.appendChild(div);
 
     let box=document.querySelector(`input[id="${i}"]`);
+    let removeBtn=document.querySelector(`#remove${i}`);
     
     box.addEventListener('change',function(){
       console.log(this.id);
       let boxLabel=document.getElementById("label"+this.id);
-      if(this.checked){console.log(" Read");
-                        boxLabel.innerHTML="Read";
+      if(this.checked){
+                        boxLabel.innerHTML=" Read";
+                        myLibrary[this.id]=true;
                         }
-      else{console.log(" Not Read");
-                        boxLabel.innerHTML=" Not Read";}
+      else{             boxLabel.innerHTML=" Not Read";
+                        myLibrary[this.id]=false;}
     });
     
+    removeBtn.addEventListener('click',()=>{
+      removeBtn.parentNode.remove();})
 
 }
 
@@ -71,10 +76,13 @@ let testbox=document.querySelector(`input[id="test1"]`);
     testbox.addEventListener('change',function(){
       let testboxLabel=document.getElementById("labeltest1");
       if(this.checked){console.log(" Read");
-                        testboxLabel.innerHTML="Read";
+                        testboxLabel.innerHTML=" Read";
                         }
       else{console.log(" Not Read");
                         testboxLabel.innerHTML=" Not Read";}
     });
 
+
+let removeBtn=document.querySelector('#remove');
+removeBtn.addEventListener('click', ()=>{removeBtn.parentNode.remove();})
 
